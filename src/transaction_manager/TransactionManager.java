@@ -14,7 +14,7 @@ import static transaction_manager.XID.*;
  * @author RabbitTank
  * @date 2026/1/12
  * @description 事务管理器 负责发 xid + 记录事务最终状态 + 提供查询<hr/>
- * xid = 0 为超级事务，视为 Committed
+ * xid = 0 为超级事务，视为 Committed 不会写进 .xid 文件
  */
 public interface TransactionManager {
 
