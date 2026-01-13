@@ -1,7 +1,7 @@
-package transaction_manager.Impl;
+package main.transaction_manager.Impl;
 
-import transaction_manager.TransactionManager;
-import transaction_manager.TransactionStatus;
+import main.transaction_manager.TransactionManager;
+import main.transaction_manager.TransactionStatus;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -9,8 +9,8 @@ import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.util.concurrent.locks.ReentrantLock;
 
-import static transaction_manager.TransactionStatus.*;
-import static transaction_manager.XidFile.*;
+import static main.transaction_manager.TransactionStatus.*;
+import static main.transaction_manager.XidFile.*;
 
 /**
  *

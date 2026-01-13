@@ -1,13 +1,13 @@
-package transaction_manager;
+package main.transaction_manager;
 
-import transaction_manager.Impl.TransactionManagerImpl;
+import main.transaction_manager.Impl.TransactionManagerImpl;
 
 import java.io.File;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 
-import static transaction_manager.XidFile.*;
+import static main.transaction_manager.XidFile.*;
 
 /**
  *

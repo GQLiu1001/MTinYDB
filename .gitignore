@@ -31,3 +31,5 @@ bin/
 
 *.iml
 .idea/
+target
+*.xid
