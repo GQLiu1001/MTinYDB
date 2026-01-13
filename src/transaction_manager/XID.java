@@ -7,9 +7,9 @@ package transaction_manager;
  * @description 定义 XID 相关参数及工具<br/>
  * 例:00000003210 <br/>
  * 00000003 有三个事务 <br/>
- * 2 第一个事务状态为 ABORTED <br/>
- * 1 第二个事务状态为 COMMITTED <br/>
- * 0 第三个事务状态为 ACTIVE
+ * 2 xid = 1 的事务状态为 ABORTED <br/>
+ * 1 xid = 2 的事务状态为 COMMITTED <br/>
+ * 0 xid = 3 的事务状态为 ACTIVE
  */
 public class XID{
     /**
