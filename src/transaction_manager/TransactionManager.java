@@ -7,7 +7,7 @@ import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 
-import static transaction_manager.XID.*;
+import static transaction_manager.XidFile.*;
 
 /**
  *
@@ -53,7 +53,7 @@ public interface TransactionManager {
      * @return
      */
     public static TransactionManagerImpl create(String path) {
-        File xidFile = new File(path + XID_SUFFIX);
+        File xidFile = new File(xidFilePath(path));
         RandomAccessFile raf = null;
         FileChannel fc = null;
         try {
@@ -113,7 +113,7 @@ public interface TransactionManager {
      * @return
      */
     public static TransactionManagerImpl open(String path) {
-        File xidFile = new File(path + XID_SUFFIX);
+        File xidFile = new File(xidFilePath(path));
         RandomAccessFile raf = null;
         FileChannel fc = null;
         try {

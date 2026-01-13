@@ -11,7 +11,7 @@ package transaction_manager;
  * 1 xid = 2 的事务状态为 COMMITTED <br/>
  * 0 xid = 3 的事务状态为 ACTIVE
  */
-public class XID{
+public class XidFile {
     /**
      * xid header 长度：8 字节 long
      */
@@ -51,17 +51,5 @@ public class XID{
      */
     public static String xidFilePath(String dbPathPrefix) {
         return dbPathPrefix + XID_SUFFIX;
-    }
-
-    /**
-     *
-     * @param xidCounter 事务计数
-     * @return 根据 xidCounter 计算期望的文件长度
-     */
-    public static long expectedFileLength(long xidCounter) {
-        if (xidCounter < 0) {
-            throw new IllegalArgumentException("xidCounter must be >= 0, but was " + xidCounter);
-        }
-        return HEADER_LEN + xidCounter * XID_FIELD_SIZE;
     }
 }
