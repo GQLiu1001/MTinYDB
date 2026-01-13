@@ -37,6 +37,7 @@ public interface TransactionManager {
      */
     void abort(long xid);
 
+    void close();
 
     boolean isActive(long xid);
 

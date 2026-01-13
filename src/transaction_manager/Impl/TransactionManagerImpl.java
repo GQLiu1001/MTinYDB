@@ -85,6 +85,18 @@ public class TransactionManagerImpl implements TransactionManager {
     }
 
     @Override
+    public void close() {
+        lock.lock();
+        try {
+            try { fc.force(true); } catch (Exception ignore) {}
+            try { fc.close(); } catch (Exception ignore) {}
+            try { raf.close(); } catch (Exception ignore) {}
+        } finally {
+            lock.unlock();
+        }
+    }
+
+    @Override
     public boolean isActive(long xid) {
         if (xid == SUPER_XID) return false;
         checkXid(xid);
